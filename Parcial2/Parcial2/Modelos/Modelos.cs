@@ -1,11 +1,11 @@
 ﻿namespace SistemaMusica.Modelos
 {
-    //Clase Cancion (Modelos)
+
     public class Cancion
 {
-    public string Nombre { get; }
-    public string Artista { get; }
-    public int DuracionSeguntos { get; }
+    public string Nombre { get; set; }
+    public string Artista { get; set; }
+    public int DuracionSeguntos { get; set; }
 
     public Cancion(string nombre, string artista, int duracionSeguntos)
     {
@@ -20,7 +20,6 @@
     }
 }
 
-//Clase Usuario (Modelos)
 public class Usuario
 {
     public string Nombre { get; }
