@@ -14,12 +14,16 @@ namespace SistemaMusica.Gestores
             cancionesDisponibles = new List<Cancion>();
         }
         //Metodos
-        public void AgregarCancion(Cancion cancion)
+        public void AgregarCancion(Cancion cancion, bool mostrarMensaje = true)
         {
             if (cancion != null)
             {
                 cancionesDisponibles.Add(cancion);
-                Console.WriteLine("Canción agregada: " + cancion.Nombre);
+
+                if (mostrarMensaje)
+                {
+                    Console.WriteLine("Canción agregada: " + cancion.Nombre);
+                }
             }
             else
             {
