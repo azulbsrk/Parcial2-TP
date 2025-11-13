@@ -2,7 +2,6 @@
 
 namespace SistemaMusica.Gestores
 {
-
     public class GestorCanciones
     {
         //Atributo
@@ -13,7 +12,8 @@ namespace SistemaMusica.Gestores
         {
             cancionesDisponibles = new List<Cancion>();
         }
-        //Metodos
+
+        //Métodos
         public void AgregarCancion(Cancion cancion, bool mostrarMensaje = true)
         {
             if (cancion != null)
@@ -38,7 +38,7 @@ namespace SistemaMusica.Gestores
             for (int i = 0; i < cancionesDisponibles.Count; i++)
             {
                 Cancion actual = cancionesDisponibles[i];
-                if (actual.Nombre.ToLower().Contains(nombre.ToLower()))
+                if (actual.Nombre.IndexOf(nombre, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     resultados.Add(actual);
                 }
@@ -51,7 +51,6 @@ namespace SistemaMusica.Gestores
 
             return resultados;
         }
-
 
         public void MostrarCancionesDisponibles()
         {
@@ -82,7 +81,6 @@ namespace SistemaMusica.Gestores
             }
         }
 
-
         private void QuickSort(List<Cancion> lista, int low, int high)
         {
             if (low < high)
@@ -93,15 +91,14 @@ namespace SistemaMusica.Gestores
             }
         }
 
-
         private int Particionar(List<Cancion> lista, int low, int high)
         {
-            int pivote = lista[high].DuracionSeguntos;
+            int pivote = lista[high].DuracionSegundos; // corregí el nombre del atributo
             int i = low - 1;
 
             for (int j = low; j < high; j++)
             {
-                if (lista[j].DuracionSeguntos < pivote)
+                if (lista[j].DuracionSegundos < pivote)
                 {
                     i++;
                     Intercambiar(lista, i, j);
@@ -112,7 +109,6 @@ namespace SistemaMusica.Gestores
             return i + 1;
         }
 
- 
         private void Intercambiar(List<Cancion> lista, int i, int j)
         {
             Cancion temp = lista[i];
