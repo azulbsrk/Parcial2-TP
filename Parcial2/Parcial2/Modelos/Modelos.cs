@@ -1,5 +1,7 @@
-﻿//Clase Cancion (Modelos)
-public class Cancion
+﻿namespace SistemaMusica.Modelos
+{
+    //Clase Cancion (Modelos)
+    public class Cancion
 {
     public string Nombre { get; }
     public string Artista { get; }
@@ -87,4 +89,6 @@ public class Usuario
             }
         }
     }
+}
+
 }

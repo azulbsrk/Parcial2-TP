@@ -92,12 +92,12 @@ namespace SistemaMusica.Gestores
 
         private int Particionar(List<Cancion> lista, int low, int high)
         {
-            int pivote = lista[high].DuracionSegundos;
+            int pivote = lista[high].DuracionSeguntos;
             int i = low - 1;
 
             for (int j = low; j < high; j++)
             {
-                if (lista[j].DuracionSegundos < pivote)
+                if (lista[j].DuracionSeguntos < pivote)
                 {
                     i++;
                     Intercambiar(lista, i, j);
